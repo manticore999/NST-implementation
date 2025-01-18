@@ -5,6 +5,20 @@ from nst_app import NeuralStyleTransferApp
 from utils import get_default_config
 from image_processor import ImageProcessor
 
+# Configure page to use wide mode
+st.set_page_config(
+    page_title="Neural Style Transfer",
+    page_icon="🎨",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Add caching for model loading
+@st.cache_resource
+def load_model():
+    # Your model loading code here
+    pass
+
 def format_image_name(filename):
     # Remove file extension
     name = os.path.splitext(filename)[0]
